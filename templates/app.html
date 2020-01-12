@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+
+    <style>
+        .alert {
+            background: green;
+            padding: 1rem;
+            border-radius: 5px;
+            color: white;
+            margin: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>ASBF Loan Calculator</h3>
+    </div>
+
+    <!-- Form -->
+    <div class="container">
+        <form action="/send" method="POST">
+
+            <label for="Loan Amount">Loan amount  </label>
+            <select class="u-full-width" name="principal">
+            <option value="10000">10000</option>
+            <option value="15000">15000</option>
+            <option value="20000">20000</option>
+            <option value="25000">25000</option>
+            <option value="30000">30000</option>
+            <option value="35000">35000</option>
+            <option value="40000">40000</option>
+            <option value="45000">45000</option>
+            <option value="50000">50000</option>
+            <option value="55000">55000</option>
+            <option value="60000">60000</option>
+            <option value="65000">65000</option>
+            <option value="70000">70000</option>
+            <option value="75000">75000</option>
+            <option value="80000">80000</option>
+            <option value="85000">85000</option>
+            <option value="90000">90000</option>
+            <option value="95000">95000</option>
+            <option value="100000">100000</option>
+            <option value="105000">105000</option>
+            <option value="110000">110000</option>
+            <option value="115000">115000</option>
+            <option value="120000">120000</option>
+            <option value="125000">125000</option>
+            <option value="130000">130000</option>
+            <option value="135000">135000</option>
+            <option value="140000">140000</option>
+            <option value="145000">145000</option>
+            <option value="150000">150000</option>
+            <option value="155000">155000</option>
+            <option value="160000">160000</option>
+            <option value="165000">165000</option>
+            <option value="170000">170000</option>
+            <option value="175000">175000</option>
+            <option value="180000">180000</option>
+            <option value="185000">185000</option>
+            <option value="190000">190000</option>
+            <option value="195000">195000</option>
+            <option value="200000">200000</option>
+            </select>
+
+            <label for="Asb Return">Asb Return  </label>
+            <input type="text" placeholder="Ex : 8%" class="u-full-width" name="returnRate" />
+
+            <label for="Loan Interest">Loan Interest  </label>
+            <input type="text" placeholder="Ex : 4.5%" class="u-full-width" name="interestRate" />
+
+            <label for="Loan Tenure">Loan Tenure  </label>
+            <input type="text" placeholder="Ex : 30 Years" class="u-full-width" name="tenure" />
+
+            <label for="Termination Year">Termination Year  </label>
+            <input type="text" placeholder="Ex : 5 Years" class="u-full-width" name="termination" />
+
+            <input type="submit" value="Calculate" id="calc_btn" />
+            <br />
+            <div class="alert">
+                {{sum}}
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
