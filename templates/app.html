@@ -95,7 +95,7 @@
     <div class="container">
         <form action="/send" method="POST">
 
-            <label for="Loan Amount">Loan amount  </label>
+            <label for="Loan Amount">Loan amount (RM)</label>
             <select class="u-full-width" name="principal">
             <option value="10000">10000</option>
             <option value="15000">15000</option>
@@ -138,22 +138,22 @@
             <option value="200000">200000</option>
             </select>
 
-            <label for="Asb Return">Asb Return  </label>
-            <input type="text" placeholder="Ex : 8%" class="u-full-width" name="returnRate" />
+            <label for="Asb Return">Asb Return (%)</label>
+            <input type="text" placeholder="Ex : 8" class="u-full-width" name="returnRate" />
 
-            <label for="Loan Interest">Loan Interest  </label>
-            <input type="text" placeholder="Ex : 4.5%" class="u-full-width" name="interestRate" />
+            <label for="Loan Interest">Loan Interest (%)</label>
+            <input type="text" placeholder="Ex : 4.5" class="u-full-width" name="interestRate" />
 
-            <label for="Loan Tenure">Loan Tenure  </label>
-            <input type="text" placeholder="Ex : 30 Years" class="u-full-width" name="tenure" />
+            <label for="Loan Tenure">Loan Tenure (Years)</label>
+            <input type="text" placeholder="Ex : 30" class="u-full-width" name="tenure" />
 
-            <label for="Termination Year">Termination Year  </label>
-            <input type="text" placeholder="Ex : 5 Years" class="u-full-width" name="termination" />
+            <label for="Termination Year">Termination Date (Year)</label>
+            <input type="text" placeholder="Ex : 5" class="u-full-width" name="termination" />
 
             <input type="submit" value="Calculate" id="calc_btn" style="-webkit-appearance: none;background: white;font-weight: bolder;" />
             <br/> {% if sum %}
             <div class="alert">
-                Loan amount = RM {{sum[2]}} <br/> Asb Return = {{sum[3]}}% <br/> Loan Interest = {{sum[4]}}% <br/> Loan Tenure = {{sum[5]}} Year(s) <br/> Termination Year = {{sum[6]}} Year(s) <br/>
+                Loan amount = RM {{sum[2]}} <br/> Asb Return = {{sum[3]}}% <br/> Loan Interest = {{sum[4]}}% <br/> Loan Tenure = {{sum[5]}} Years <br/> Terminationn Date = Year {{sum[6]}} <br/>
                 <b>Maturity Value = RM {{ sum[0] }} <br/> Monthly
                     Instalment = RM {{ sum[1] }}</b>
             </div>
