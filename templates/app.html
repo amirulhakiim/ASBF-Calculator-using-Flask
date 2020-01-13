@@ -5,10 +5,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Calculator</title>
+    <title>ASBF Calculator</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
 
     <style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            background-color: cadetblue;
+        }
+        
+        h1 {
+            padding-block-start: 20px;
+        }
+        
         .alert {
             background: green;
             padding: 1rem;
@@ -21,7 +36,9 @@
 
 <body>
     <div class="container">
-        <h3>ASBF Loan Calculator</h3>
+        <h3>
+            <center>ASBF Loan Calculator</center>
+        </h3>
     </div>
 
     <!-- Form -->
@@ -83,10 +100,12 @@
             <label for="Termination Year">Termination Year  </label>
             <input type="text" placeholder="Ex : 5 Years" class="u-full-width" name="termination" />
 
-            <input type="submit" value="Calculate" id="calc_btn" />
-            <br />
+            <input type="submit" value="Calculate" id="calc_btn" style="background: white;" />
+            <br/>
             <div class="alert">
-                {{sum}}
+                {% if sum %} Loan amount = RM {{sum[2]}} <br/> Asb Return = {{sum[3]}}% <br/> Loan Interest = {{sum[4]}}% <br/> Loan Tenure = {{sum[5]}} Year(s) <br/> Termination Year = {{sum[6]}} Year(s) <br/>
+                <b>Maturity Value = RM {{ sum[0] }} <br/> Monthly
+                    Instalment = RM {{ sum[1] }}</b> {% endif %}
             </div>
         </form>
     </div>

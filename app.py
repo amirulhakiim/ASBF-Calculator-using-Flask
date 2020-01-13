@@ -17,12 +17,14 @@ def send(sum=sum):
         interestRate = float(request.form['interestRate'])
         tenure = int(request.form['tenure'])
         termination = int(request.form['termination'])
-
-
-        maturity = calculate(principal,returnRate,interestRate,tenure,termination)
-        maturity = str(round(maturity,2))
-        maturity = "Maturity Value : RM " + maturity
-        return render_template('app.html', sum = maturity)
+ 
+        maturity,payment = calculate(principal,returnRate,interestRate,tenure,termination)
+        maturity = '{:,.2f}'.format(maturity)
+        #maturity = "Maturity Value : RM " + maturity
+        payment = '{:,.2f}'.format(-payment)
+        #payment = "Monthly Instalment : RM " + payment
+        sum = [maturity,payment,principal,returnRate,interestRate,tenure,termination]
+        return render_template('app.html', sum = sum)
 
 
 if __name__ == ' __main__':

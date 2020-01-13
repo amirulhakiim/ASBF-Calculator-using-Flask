@@ -26,4 +26,4 @@ def calculate(principal,asb_return,loan_interest,loan_tenure,year_terminate):
 
     balance = float(balance[int(year_terminate*12) - 1])
     maturity = compounded_interest - balance
-    return maturity,payment
+    return round(maturity,2)
